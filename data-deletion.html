@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluma - Solicitação de Exclusão de Dados</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #9157CD 0%, #7B3F9D 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            width: 64px;
+            height: 64px;
+            background: #9157CD;
+            border-radius: 16px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .content {
+            line-height: 1.6;
+            color: #444;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section h2 {
+            color: #9157CD;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .form-container {
+            background: #F8F9FA;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #E1E5E9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #9157CD;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .submit-btn {
+            background: #9157CD;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: #7B3F9D;
+        }
+        
+        .contact-info {
+            background: #E8F4FD;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #9157CD;
+        }
+        
+        .contact-info h3 {
+            color: #9157CD;
+            margin-bottom: 10px;
+        }
+        
+        .data-types {
+            background: #FFF8E1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .data-types h3 {
+            color: #F57C00;
+            margin-bottom: 15px;
+        }
+        
+        .data-types ul {
+            padding-left: 20px;
+        }
+        
+        .data-types li {
+            margin-bottom: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">A</div>
+            <h1>Solicitação de Exclusão de Dados</h1>
+            <p class="subtitle">Aluma - Wellness Companion</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>📋 Sobre a Exclusão de Dados</h2>
+                <p>
+                    Respeitamos seu direito à privacidade e controle sobre seus dados pessoais. 
+                    Se você deseja excluir permanentemente sua conta e todos os dados associados 
+                    do aplicativo Aluma, siga as instruções abaixo.
+                </p>
+            </div>
+            
+            <div class="data-types">
+                <h3>🗂️ Dados que serão excluídos:</h3>
+                <ul>
+                    <li>Informações de perfil (nome, email)</li>
+                    <li>Histórico de suplementos e aderência</li>
+                    <li>Conversas com a IA Aluma</li>
+                    <li>Sessões de respiração registradas</li>
+                    <li>Configurações de notificações</li>
+                    <li>Todos os dados de uso do aplicativo</li>
+                </ul>
+            </div>
+            
+            <div class="form-container">
+                <h2>📝 Formulário de Solicitação</h2>
+                <p style="margin-bottom: 20px;">
+                    Preencha o formulário abaixo para solicitar a exclusão dos seus dados:
+                </p>
+                
+                <form id="deletionForm">
+                    <div class="form-group">
+                        <label for="email">Email da conta Aluma:</label>
+                        <input type="email" id="email" name="email" required 
+                               placeholder="seu@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reason">Motivo da exclusão (opcional):</label>
+                        <textarea id="reason" name="reason" 
+                                placeholder="Conte-nos o motivo (opcional)"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmation">
+                            <input type="checkbox" id="confirmation" required style="width: auto; margin-right: 10px;">
+                            Confirmo que desejo excluir permanentemente todos os meus dados do Aluma
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        🗑️ Solicitar Exclusão de Dados
+                    </button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <h3>📧 Contato Direto</h3>
+                <p>
+                    Você também pode solicitar a exclusão enviando um email para:<br>
+                    <strong>privacy@aluma.app</strong>
+                </p>
+                <p style="margin-top: 10px;">
+                    <strong>Prazo:</strong> Processaremos sua solicitação em até 30 dias úteis.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2>⚠️ Importante</h2>
+                <p>
+                    • A exclusão é <strong>permanente e irreversível</strong><br>
+                    • Você perderá acesso a todos os dados e histórico<br>
+                    • Será necessário criar uma nova conta para usar o app novamente<br>
+                    • Alguns dados podem ser mantidos por obrigações legais
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('deletionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const reason = document.getElementById('reason').value;
+            
+            // Criar email automático
+            const subject = 'Solicitação de Exclusão de Dados - Aluma';
+            const body = `Olá,
+
+Solicito a exclusão permanente de todos os meus dados da conta Aluma.
+
+Email da conta: ${email}
+Motivo: ${reason || 'Não informado'}
+
+Confirmo que entendo que esta ação é irreversível.
+
+Atenciosamente.`;
+            
+            const mailtoLink = `mailto:privacy@aluma.app?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Abrir cliente de email
+            window.location.href = mailtoLink;
+            
+            // Mostrar confirmação
+            alert('✅ Seu cliente de email será aberto com a solicitação pré-preenchida. Envie o email para completar o processo.');
+        });
+    </script>
+</body>
+</html>
